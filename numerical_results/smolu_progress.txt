@@ -1,0 +1,40 @@
+iteration 0 begins
+iteration 0 succesfully terminated
+iteration 1 begins
+iteration 1 succesfully terminated
+iteration 2 begins
+iteration 2 succesfully terminated
+iteration 3 begins
+iteration 3 succesfully terminated
+iteration 4 begins
+iteration 4 succesfully terminated
+iteration 5 begins
+iteration 5 succesfully terminated
+iteration 6 begins
+iteration 6 succesfully terminated
+iteration 7 begins
+iteration 7 succesfully terminated
+iteration 8 begins
+iteration 8 succesfully terminated
+iteration 9 begins
+iteration 9 succesfully terminated
+iteration 10 begins
+iteration 10 succesfully terminated
+iteration 11 begins
+iteration 11 succesfully terminated
+iteration 12 begins
+iteration 12 succesfully terminated
+iteration 13 begins
+iteration 13 succesfully terminated
+iteration 14 begins
+iteration 14 succesfully terminated
+iteration 15 begins
+iteration 15 succesfully terminated
+iteration 16 begins
+iteration 16 succesfully terminated
+iteration 17 begins
+iteration 17 succesfully terminated
+iteration 18 begins
+iteration 18 succesfully terminated
+iteration 19 begins
+iteration 19 succesfully terminated

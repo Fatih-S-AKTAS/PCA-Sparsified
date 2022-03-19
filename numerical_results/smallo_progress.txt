@@ -1,0 +1,200 @@
+iteration 0 begins
+iteration 0 heuristic passed 
+iteration 0 ADMM starts 
+iteration 0 CGAL starts 
+iteration 0 succesfully terminated
+iteration 1 begins
+iteration 1 heuristic passed 
+iteration 1 ADMM starts 
+iteration 1 CGAL starts 
+iteration 1 succesfully terminated
+iteration 2 begins
+iteration 2 heuristic passed 
+iteration 2 ADMM starts 
+iteration 2 CGAL starts 
+iteration 2 succesfully terminated
+iteration 3 begins
+iteration 3 heuristic passed 
+iteration 3 ADMM starts 
+iteration 3 CGAL starts 
+iteration 3 succesfully terminated
+iteration 4 begins
+iteration 4 heuristic passed 
+iteration 4 ADMM starts 
+iteration 4 CGAL starts 
+iteration 4 succesfully terminated
+iteration 5 begins
+iteration 5 heuristic passed 
+iteration 5 ADMM starts 
+iteration 5 CGAL starts 
+iteration 5 succesfully terminated
+iteration 6 begins
+iteration 6 heuristic passed 
+iteration 6 ADMM starts 
+iteration 6 CGAL starts 
+iteration 6 succesfully terminated
+iteration 7 begins
+iteration 7 heuristic passed 
+iteration 7 ADMM starts 
+iteration 7 CGAL starts 
+iteration 7 succesfully terminated
+iteration 8 begins
+iteration 8 heuristic passed 
+iteration 8 ADMM starts 
+iteration 8 CGAL starts 
+iteration 8 succesfully terminated
+iteration 9 begins
+iteration 9 heuristic passed 
+iteration 9 ADMM starts 
+iteration 9 CGAL starts 
+iteration 9 succesfully terminated
+iteration 10 begins
+iteration 10 heuristic passed 
+iteration 10 ADMM starts 
+iteration 10 CGAL starts 
+iteration 10 succesfully terminated
+iteration 11 begins
+iteration 11 heuristic passed 
+iteration 11 ADMM starts 
+iteration 11 CGAL starts 
+iteration 11 succesfully terminated
+iteration 12 begins
+iteration 12 heuristic passed 
+iteration 12 ADMM starts 
+iteration 12 CGAL starts 
+iteration 12 succesfully terminated
+iteration 13 begins
+iteration 13 heuristic passed 
+iteration 13 ADMM starts 
+iteration 13 CGAL starts 
+iteration 13 succesfully terminated
+iteration 14 begins
+iteration 14 heuristic passed 
+iteration 14 ADMM starts 
+iteration 14 CGAL starts 
+iteration 14 succesfully terminated
+iteration 15 begins
+iteration 15 heuristic passed 
+iteration 15 ADMM starts 
+iteration 15 CGAL starts 
+iteration 15 succesfully terminated
+iteration 16 begins
+iteration 16 heuristic passed 
+iteration 16 ADMM starts 
+iteration 16 CGAL starts 
+iteration 16 succesfully terminated
+iteration 17 begins
+iteration 17 heuristic passed 
+iteration 17 ADMM starts 
+iteration 17 CGAL starts 
+iteration 17 succesfully terminated
+iteration 18 begins
+iteration 18 heuristic passed 
+iteration 18 ADMM starts 
+iteration 18 CGAL starts 
+iteration 18 succesfully terminated
+iteration 19 begins
+iteration 19 heuristic passed 
+iteration 19 ADMM starts 
+iteration 19 CGAL starts 
+iteration 19 succesfully terminated
+iteration 20 begins
+iteration 20 heuristic passed 
+iteration 20 ADMM starts 
+iteration 20 CGAL starts 
+iteration 20 succesfully terminated
+iteration 21 begins
+iteration 21 heuristic passed 
+iteration 21 ADMM starts 
+iteration 21 CGAL starts 
+iteration 21 succesfully terminated
+iteration 22 begins
+iteration 22 heuristic passed 
+iteration 22 ADMM starts 
+iteration 22 CGAL starts 
+iteration 22 succesfully terminated
+iteration 23 begins
+iteration 23 heuristic passed 
+iteration 23 ADMM starts 
+iteration 23 CGAL starts 
+iteration 23 succesfully terminated
+iteration 24 begins
+iteration 24 heuristic passed 
+iteration 24 ADMM starts 
+iteration 24 CGAL starts 
+iteration 24 succesfully terminated
+iteration 25 begins
+iteration 25 heuristic passed 
+iteration 25 ADMM starts 
+iteration 25 CGAL starts 
+iteration 25 succesfully terminated
+iteration 26 begins
+iteration 26 heuristic passed 
+iteration 26 ADMM starts 
+iteration 26 CGAL starts 
+iteration 26 succesfully terminated
+iteration 27 begins
+iteration 27 heuristic passed 
+iteration 27 ADMM starts 
+iteration 27 CGAL starts 
+iteration 27 succesfully terminated
+iteration 28 begins
+iteration 28 heuristic passed 
+iteration 28 ADMM starts 
+iteration 28 CGAL starts 
+iteration 28 succesfully terminated
+iteration 29 begins
+iteration 29 heuristic passed 
+iteration 29 ADMM starts 
+iteration 29 CGAL starts 
+iteration 29 succesfully terminated
+iteration 30 begins
+iteration 30 heuristic passed 
+iteration 30 ADMM starts 
+iteration 30 CGAL starts 
+iteration 30 succesfully terminated
+iteration 31 begins
+iteration 31 heuristic passed 
+iteration 31 ADMM starts 
+iteration 31 CGAL starts 
+iteration 31 succesfully terminated
+iteration 32 begins
+iteration 32 heuristic passed 
+iteration 32 ADMM starts 
+iteration 32 CGAL starts 
+iteration 32 succesfully terminated
+iteration 33 begins
+iteration 33 heuristic passed 
+iteration 33 ADMM starts 
+iteration 33 CGAL starts 
+iteration 33 succesfully terminated
+iteration 34 begins
+iteration 34 heuristic passed 
+iteration 34 ADMM starts 
+iteration 34 CGAL starts 
+iteration 34 succesfully terminated
+iteration 35 begins
+iteration 35 heuristic passed 
+iteration 35 ADMM starts 
+iteration 35 CGAL starts 
+iteration 35 succesfully terminated
+iteration 36 begins
+iteration 36 heuristic passed 
+iteration 36 ADMM starts 
+iteration 36 CGAL starts 
+iteration 36 succesfully terminated
+iteration 37 begins
+iteration 37 heuristic passed 
+iteration 37 ADMM starts 
+iteration 37 CGAL starts 
+iteration 37 succesfully terminated
+iteration 38 begins
+iteration 38 heuristic passed 
+iteration 38 ADMM starts 
+iteration 38 CGAL starts 
+iteration 38 succesfully terminated
+iteration 39 begins
+iteration 39 heuristic passed 
+iteration 39 ADMM starts 
+iteration 39 CGAL starts 
+iteration 39 succesfully terminated
