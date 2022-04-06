@@ -19,6 +19,7 @@ Also, gc was used because of initial memory/cpu errors encountered. It may be si
 
 Please e-mail selim.aktas@bilkent.edu.tr for anything about the piece of code here.
 """
+
 def ADMM_SDP(A,b,rho,s,max_iter):
     # only solves the sdp
     # no reweighting
@@ -616,7 +617,8 @@ def ADMM_mk2(A,b,rho,correction,sparsity,max_iter,n1 = 1,eps_abs = 1e-5,eps_rel 
         
         if trace(X3) > 0: 
             RW = abs(X3)
-            RW = RW/RW.max()
+            # RW = RW/RW.max()
+            RW = RW/RW.max() ** 0.5
             L = 1/(correction[rw] + RW)
         elif norm(X2) > 0:
             RW = abs(X2)
@@ -765,156 +767,6 @@ def ADMM_fantope(A,b,rho,correction,sparsity,max_iter,n1 = 1,rank = 1,eps_abs = 
     # admm_set = argsort(-1 * abs(v2[:,-1]))[:s]
     # se,sv = eigsh(A[admm_set,:][:,admm_set],k=3)
     return X1,X2,X3,y1,y2,U1,U2,best_set,best_val
-
-
-def Fantope(B,A,lamda,rho,rank = 5,sparsity = 10,max_iter = 1000,n1 = 1,eps_abs = 1e-3,eps_rel = 1e-3,eps_rw = 1e-3):
-    # admm with diameter given n1
-    # reweighting is normalized for better numerical results
-    # primal-dual stopping criteria is used
-    # penalty parameter is adaptively changed depending on
-    # primal and dual residual
-    
-    m,n = shape(A)
-    
-    X = zeros([n,n])
-    Y = zeros([n,n])
-    U = zeros([n,n])
-    
-    r = 0
-    s = 0
-    mu = 100
-    
-    eps_pri = n * eps_abs
-    
-    t = 0
-    while t <= max_iter:
-        # print("t",t)
-
-        t += 1
-        
-        X = Y - U/rho + A/rho
-        d,P = eigh(X)
-        if sum (d[d>0]) >= rank:
-            l = 0
-            u = max(d)
-        else:
-            l = min(d)
-            u = max(d)
-        teta = (u+l) * 0.5
-        while abs(sum(clip(d-teta,a_min = 0,a_max = 1)) - rank) > 1e-2:
-            if sum(clip(d-teta,a_min = 0,a_max = 1)) - rank > 0:
-                l = teta
-                teta = (l+u)/2
-            else:
-                u = teta
-                teta = (l+u)/2
-        i, = where(clip(d-teta,a_min = 0,a_max = 1) > 0)
-        d = clip(d-teta,a_min = 0,a_max = 1)
-        X = (P[:,i]*d[i]).dot(P[:,i].T)
-        
-        Y_old = Y.copy()
-        Y = X + U/rho
-        Y = sign(Y) * (abs(Y)-lamda/rho).clip(0)
-    
-        U = U + rho * (X - Y)
-        
-        r = norm(X-Y) ** 2
-        s = rho ** 2 * (norm(Y-Y_old) ** 2)
-        
-        if t % 200 == 0:
-            print("iteration",t)
-            print("primal residual", r)
-            print("dual residual", s)
-            gc.collect()
-            
-        eps_dual = 1.4 * n * eps_abs + eps_rel * norm(U)
-        # eps_dual = 1.4 * n * eps_abs
-        
-        if r < eps_pri ** 2 and s < eps_dual ** 2: 
-            break
-        elif r > mu * s:
-            rho = 2 * rho
-        elif s > mu * r:
-            rho = rho/2
-        
-    d2,v2 = eigsh(X,k=rank)
-    pattern0 = argsort(abs(v2[:,:rank]),axis = 0)[-sparsity:]
-    svector1 = zeros([n,rank])
-    svector2 = zeros([n,rank])
-    for i in range(rank):
-        svector1[pattern0[:,i],i] = v2[pattern0[:,i],i]/norm(v2[pattern0[:,i],i])
-        se,sv = eigsh(A[pattern0[:,i],:][:,pattern0[:,i]],k=3)
-        svector2[pattern0[:,i],i] = sv[:,-1]
-    
-    q1,r1 = qr(B.dot(svector1),mode = "economic")
-    var_cvx1 = diag(r1) ** 2 
-    print("var",sum(var_cvx1))
-    q2,r2 = qr(B.dot(svector2),mode = "economic")
-    var_cvx2 = diag(r2) ** 2 
-    print("var",sum(var_cvx2))
-        
-    # d2,v2 = eigsh(X3,k=3)
-    # admm_set = argsort(-1 * abs(v2[:,-1]))[:s]
-    # se,sv = eigsh(A[admm_set,:][:,admm_set],k=3)
-    return X,Y,U
-
-# def DSPCA(A,rho,s,max_iter):
-#     # only solves the sdp
-#     # no reweighting
-#     m,n = shape(A)
-    
-#     a = A.flatten()
-#     v = eye(n).flatten()
-    
-#     y1 = 0
-#     y2 = 0
-#     U1 = zeros([n,n])
-#     U2 = zeros([n,n])
-    
-    
-#     M = hstack((reshape(a,[n**2,1]),reshape(v,[n**2,1])))
-#     m = inv(0.5 * array([[a.dot(a),a.dot(v)],[a.dot(v),v.dot(v)]]) + eye(2))
-    
-#     X1 = zeros([n,n])
-#     X2 = zeros([n,n])
-#     X3 = zeros([n,n])
-    
-#     t = 0
-#     while t <= max_iter:
-
-#         t += 1
-#         # X1 = rho/(1+rho) * (X2 - U1/rho)
-
-#         f = X1.flatten() + U1.flatten()/rho + X3.flatten() + U2.flatten()/rho +\
-#             b * a - y1 * a/rho + v - y2 * v / rho
-        
-#         X2 = f/2 -1/4 * M.dot(m.dot(M.T.dot(f)))
-#         X2 = reshape(X2,[n,n])
-        
-#         X1 = X2 - U1/rho
-#         X1 = sign(X1) * (abs(X1)-1/rho).clip(0)
-
-#         X3 = X2 - U2/rho
-#         d,P = eigh(X3)
-#         i, = where(d>0)
-#         X3 = P[:,i].dot(diag(d[i])).dot(P[:,i].T)
-#         # X3 = (P[:,i]*d[i]).dot(P[:,i].T)
-        
-#         y1 = y1 + rho * (tensordot(A,X1) - b)
-#         y2 = y2 + rho * (trace(X1) - 1)
-#         U1 = U1 + rho * (X1 - X2)
-#         U2 = U2 + rho * (X3 - X2)
-#         if t % 200 == 0:
-#             print("iteration",t)
-#             print("res1",tensordot(A,X2) - b)
-#             print("res2",trace(X2) - 1)
-#             print("res3",norm(X1-X2))
-#             print("res4",norm(X3-X2))
-#             gc.collect()
-#     d1,p1 = eigsh(X3)
-#     v1 = p1[:,[-1]]
-#     admm_set = argsort(abs(v1[:,0]))[-s:]
-#     return X1,X2,X3,y1,y2,U1,U2,admm_set
 
 #%%
 

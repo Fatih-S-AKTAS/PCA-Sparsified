@@ -780,7 +780,8 @@ def CGAL_wfro_dual_mk2(A,best_val,correction,s,beta0,max_iter,n2 = 0,eps_rw = 1e
         L_old = L.copy()
         
         RW = abs(X)
-        RW = RW/RW.max()
+        # RW = RW/RW.max()
+        RW = RW/RW.max() ** 0.5
         L = 1/(correction[rw] + RW)
         
         L = L/L.max()
